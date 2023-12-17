@@ -24,8 +24,8 @@ export const AboutCompany: Story = {
                 canvas.getByTestId('about-content');
 
             expect(content).not.toBeNull();
-            expect(content.textContent).toBe(
-                ' This is page about Company',
+            expect(content.textContent?.trim()).toBe(
+                'This is page about Company',
             );
         });
     },
@@ -43,8 +43,8 @@ export const AboutDevs: Story = {
                 canvas.getByTestId('about-content');
 
             expect(content).not.toBeNull();
-            expect(content.textContent).toBe(
-                ' This is page about Devs',
+            expect(content.textContent?.trim()).toBe(
+                'This is page about Devs',
             );
         });
     },
