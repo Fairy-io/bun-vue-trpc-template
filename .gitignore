@@ -7,3 +7,5 @@
 !app/**/*
 !public/**/*
 !.gitignore
+!bun.lockb
+node_modules
