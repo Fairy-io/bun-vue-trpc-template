@@ -8,4 +8,5 @@
 !public/**/*
 !.gitignore
 !bun.lockb
+!Dockerfile
 node_modules
