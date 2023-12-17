@@ -1,0 +1,9 @@
+*
+!*/
+!LICENSE
+!README.md
+!package.json
+!index.html
+!app/**/*
+!public/**/*
+!.gitignore
