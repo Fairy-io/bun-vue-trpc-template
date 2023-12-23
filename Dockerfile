@@ -1,4 +1,4 @@
-FROM bun:0.0.3 as test_and_build
+FROM massfice/bun-vue-trpc-dev-ci:1.0.0 as test_and_build
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ FROM ubuntu:20.04
 
 WORKDIR /app
 
-COPY --from=bun:0.0.2 /usr/local/sbin /usr/local/sbin
+COPY --from=test_and_build /usr/local/sbin /usr/local/sbin
 COPY --from=test_and_build /app/dist/ ./public/.
 COPY --from=test_and_build /app/server.js ./server.js
 
