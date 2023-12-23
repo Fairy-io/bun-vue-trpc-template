@@ -1,0 +1,13 @@
+node_modules
+.storybook
+.vscode
+@types
+.env
+.env.example
+.prettierrc
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+/src
+!/app/backend/src
+!/app/fronted/src
