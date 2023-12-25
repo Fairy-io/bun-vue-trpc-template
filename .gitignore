@@ -9,5 +9,6 @@ tsconfig.json
 tsconfig.node.json
 vite.config.ts
 /src
+deploy.sh
 !/app/backend/src
 !/app/fronted/src
