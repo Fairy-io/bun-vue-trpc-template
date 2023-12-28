@@ -85,5 +85,7 @@ Before deploying your project, make sure to set up the necessary secrets and con
 
 -   **Deploy Script:** If you have specific deployment requirements, modify the `deploy` script arguments in the `cloudbuild.yaml` file accordingly.
 -   **Secret versions and names:** Ensure that the versions and names of the secrets in the `cloudbuild.yaml` file match the actual secrets in your project's secret manager.
+-   **Global secrets:** If you want to use global secrets, comment out the `secretManager` section in the `cloudbuild.yaml` file of your choice.
+-   **Trigger-specific secrets:** If you want to use trigger-specific secrets, configure your Cloud Build trigger accordingly in Google Cloud, specifying the required secrets.
 
 Make these adjustments based on your project's configuration and deployment needs. Failure to provide the required secrets or make necessary adjustments may result in deployment issues.
