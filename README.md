@@ -70,3 +70,20 @@ If you opt to use [Google Cloud Build](https://cloud.google.com/build) for your 
 
 -   [cloudbuild.yaml](./cloudbuild.yaml)
 -   [cloudbuild-depot.yaml](./cloudbuild-depot.yaml) (specifically designed for use with [depot.dev](https://depot.dev))
+
+### Required Secrets and Adjustments
+
+Before deploying your project, make sure to set up the necessary secrets and consider potential adjustments. Follow these steps:
+
+#### Required Secrets
+
+-   **GITHUB_TOKEN:** Obtain a GitHub token with the required permissions for your deployment. Add the token as a secret in your project's secret manager.
+
+-   **DEPOT_TOKEN:** If you are using [depot.dev](https://depot.dev), acquire a Depot token and add it as a secret in your project's secret manager.
+
+#### Adjustments
+
+-   **Deploy Script:** If you have specific deployment requirements, modify the `deploy` script arguments in the `cloudbuild.yaml` file accordingly.
+-   **Secret versions and names:** Ensure that the versions and names of the secrets in the `cloudbuild.yaml` file match the actual secrets in your project's secret manager.
+
+Make these adjustments based on your project's configuration and deployment needs. Failure to provide the required secrets or make necessary adjustments may result in deployment issues.
