@@ -1,0 +1,25 @@
+steps:
+    - name: 'gcr.io/cloud-builders/docker'
+      args:
+          - 'build'
+          - '-t'
+          - '$_IMAGE'
+          - '.'
+    - name: 'massfice/bun-vue-trpc-dev-utils:2.0.0-amd64'
+      args:
+          - '-c'
+          - 'deploy name=name owner=owner repo=infra token=$$GITHUB_TOKEN image=$_IMAGE path=path'
+      id: Deploy
+      entrypoint: bash
+      secretEnv:
+          - GITHUB_TOKEN
+
+images:
+    - '$_IMAGE'
+
+substitutions:
+    _IMAGE: 'gcr.io/$PROJECT_ID/your-image-name:$COMMIT_SHA'
+
+secretManager:
+    - versionName: projects/$PROJECT_ID/secrets/github_secret/versions/1
+      env: GITHUB_TOKEN
