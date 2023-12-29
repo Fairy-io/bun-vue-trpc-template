@@ -8,7 +8,7 @@ steps:
     - name: 'massfice/bun-vue-trpc-dev-utils:2.0.0-amd64'
       args:
           - '-c'
-          - 'deploy name=name owner=owner repo=infra token=$$GITHUB_TOKEN image=$_IMAGE path=path'
+          - 'deploy name=$_DEPLOY_NAME owner=$_DEPLOY_INFRA_REPO_OWNER repo=$_DEPLOY_INFRA_REPO token=$$GITHUB_TOKEN image=$_IMAGE path=$_DEPLOY_PATH'
       id: Deploy
       entrypoint: bash
       secretEnv:
@@ -19,7 +19,12 @@ images:
 
 substitutions:
     _IMAGE: 'gcr.io/$PROJECT_ID/your-image-name:$COMMIT_SHA'
-#
-# secretManager:
-#     - versionName: projects/$PROJECT_ID/secrets/github_secret/versions/1
-#       env: GITHUB_TOKEN
+    _DEPLOY_NAME: name
+    _DEPLOY_INFRA_REPO_OWNER: owner
+    _DEPLOY_INFRA_REPO: infra
+    _DEPLOY_PATH: path
+    _GITHUB_TOKEN_VERSION: projects/$PROJECT_ID/secrets/github_secret/versions/1
+
+secretManager:
+    - versionName: $_GITHUB_TOKEN_VERSION
+      env: GITHUB_TOKEN
