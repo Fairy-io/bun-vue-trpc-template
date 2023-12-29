@@ -85,5 +85,6 @@ Before deploying your project, make sure to set up the necessary secrets and con
 
 -   **Deploy Script:** If you have specific deployment requirements, modify the `deploy` script arguments in the `cloudbuild.yaml` file accordingly.
 -   **Secret versions and names:** Ensure that the versions and names of the secrets in the `cloudbuild.yaml` file match the actual secrets in your project's secret manager.
+-   **Dockerfile Architecture Support:** The Dockerfile in this template supports amd64 image versions, and the base image is set to `massfice/bun-vue-trpc-dev-ci:2.2.0-amd64`. If you are using an arm64 architecture, you may want to adjust the Dockerfile to use the arm64 version: `massfice/bun-vue-trpc-dev-ci:2.2.0` (without `-amd64`).
 
 Make these adjustments based on your project's configuration and deployment needs. Failure to provide the required secrets or make necessary adjustments may result in deployment issues.

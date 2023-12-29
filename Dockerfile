@@ -1,4 +1,4 @@
-FROM massfice/bun-vue-trpc-dev-ci:2.1.0 as test_and_build
+FROM massfice/bun-vue-trpc-dev-ci:2.2.0-amd64 as test_and_build
 
 WORKDIR /app
 
