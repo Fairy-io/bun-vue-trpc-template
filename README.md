@@ -51,7 +51,7 @@ bun dev
 
 This command automatically initiates the Vue3 server, tRPC server, Storybook server, and backend tests in watch mode.
 
--   The `tRPC` server will be accessible on [localhost:3000](http://localhost:3000)
+-   The `tRPC` server will be accessible on [localhost:3000](http://localhost:3000) _(it is possible to change it by `PORT` environment variable)_
 -   The `vue3` server will be accessible on [localhost:5173](http://localhost:5173)
 -   The `Storybook` server will be accessible on [localhost:6006](http://localhost:6006)
 -   Backend tests will be displayed in the console.
