@@ -13,7 +13,7 @@ steps:
       id: Build image
       secretEnv:
           - DEPOT_TOKEN
-    - name: 'massfice/bun-vue-trpc-dev-utils:2.2.0-amd64'
+    - name: 'massfice/bun-vue-trpc-dev-utils:2.2.1-amd64'
       args:
           - '-c'
           - 'deploy name=$_DEPLOY_NAME owner=$_DEPLOY_INFRA_REPO_OWNER repo=$_DEPLOY_INFRA_REPO token=$$GITHUB_TOKEN image=$_IMAGE_NAME:$_IMAGE_TAG path=$_DEPLOY_PATH template=$_DEPLOY_TEMPLATE'

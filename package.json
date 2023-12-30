@@ -35,7 +35,7 @@
         "test:storybook": "test-storybook",
         "tests": "bun test && start-server-and-test \"bun storybook\" \"http://localhost:6006\" \"bun test:storybook\"",
         "build-storybook": "storybook build",
-        "setup": "docker run -d --name bvtt massfice/bun-vue-trpc-dev-utils:2.2.0 && docker cp bvtt:/app/. . && docker stop bvtt && docker rm bvtt && bun install && bun x playwright install && bun x playwright install-deps && cp .env.example .env && bun dev"
+        "setup": "docker run -d --name bvtt massfice/bun-vue-trpc-dev-utils:2.2.1 && docker cp bvtt:/app/. . && docker stop bvtt && docker rm bvtt && bun install && bun x playwright install && bun x playwright install-deps && cp .env.example .env && bun dev"
     },
     "type": "module",
     "workspaces": [
